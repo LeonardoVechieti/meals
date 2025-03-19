@@ -9,7 +9,19 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(category.title),
+      padding: EdgeInsets.all(15),
+      child: Text(category.title, style: TextStyle(fontSize: 15, fontFamily: 'RobotoCondensed', fontWeight: FontWeight.bold)),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            category.color.withOpacity(0.7),
+            category.color,
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
     );
   }
 }
